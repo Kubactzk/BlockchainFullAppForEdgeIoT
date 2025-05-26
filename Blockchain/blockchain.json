@@ -1,0 +1,208 @@
+[
+  {
+    "index": 0,
+    "timeStamp": "2025-05-04T15:53:20.644267Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0,
+          "timestamp": "2025-05-04T15:53:20.6438785Z"
+        }
+      ],
+      "signature": "0",
+      "name": "Genesis Block"
+    },
+    "previousHash": "0",
+    "hash": "6e5c8def104fab212b3b41ebc7efd7088fc9b1e08104ac71e019e526e8dfd9b5"
+  },
+  {
+    "index": 1,
+    "timeStamp": "2025-05-04T15:53:20.7036643Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.04207162391719621,
+          "timestamp": "2025-05-04T17:53:20.3492523+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.26466717723486954,
+          "timestamp": "2025-05-04T17:53:20.3585275+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.4592216958257166,
+          "timestamp": "2025-05-04T17:53:20.3585319+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "6e5c8def104fab212b3b41ebc7efd7088fc9b1e08104ac71e019e526e8dfd9b5",
+    "hash": "ef0fde8c25d977d944620197594c2306da4408f18fc85c6c7b5367ffecc279e2"
+  },
+  {
+    "index": 2,
+    "timeStamp": "2025-05-04T16:08:40.6379805Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.25795392359951075,
+          "timestamp": "2025-05-04T18:08:40.2937441+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.8517145737342966,
+          "timestamp": "2025-05-04T18:08:40.3041293+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.06194448782114281,
+          "timestamp": "2025-05-04T18:08:40.3041334+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "ef0fde8c25d977d944620197594c2306da4408f18fc85c6c7b5367ffecc279e2",
+    "hash": "f767cf5f806b40eb72ad9988f3ff7d6f21d9aa45e16c416447ae170652ba7be7"
+  },
+  {
+    "index": 3,
+    "timeStamp": "2025-05-04T16:13:32.97639Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.1629618860409794,
+          "timestamp": "2025-05-04T18:13:32.6860404+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.9105012114756791,
+          "timestamp": "2025-05-04T18:13:32.6949881+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.1898129005297169,
+          "timestamp": "2025-05-04T18:13:32.6949919+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "f767cf5f806b40eb72ad9988f3ff7d6f21d9aa45e16c416447ae170652ba7be7",
+    "hash": "f6f1b90dd6ed19ca777545d813d76dc684f48273ecc1c63333ab3b81a3be97cb"
+  },
+  {
+    "index": 4,
+    "timeStamp": "2025-05-16T13:27:56.0862997Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.45274332318126664,
+          "timestamp": "2025-05-16T15:27:55.6877663+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.4039254697022032,
+          "timestamp": "2025-05-16T15:27:55.6976001+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.7898051306683358,
+          "timestamp": "2025-05-16T15:27:55.6976059+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "f6f1b90dd6ed19ca777545d813d76dc684f48273ecc1c63333ab3b81a3be97cb",
+    "hash": "b7c843840da38916e0fd51764efca557d53685c3117ba78d7de0b6bf30b1c158"
+  },
+  {
+    "index": 5,
+    "timeStamp": "2025-05-16T16:19:22.1114451Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.028651409216461365,
+          "timestamp": "2025-05-16T18:19:20.3806397+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.8075369030707407,
+          "timestamp": "2025-05-16T18:19:20.4253961+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.10325026973534324,
+          "timestamp": "2025-05-16T18:19:20.4253998+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "b7c843840da38916e0fd51764efca557d53685c3117ba78d7de0b6bf30b1c158",
+    "hash": "80b1e45834f6490fd0e1ba6b0e83f4def1b1492e388ea1adf5096d91861dfac0"
+  },
+  {
+    "index": 6,
+    "timeStamp": "2025-05-21T16:13:46.839182Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.10210885608086684,
+          "timestamp": "2025-05-21T18:13:45.7417088+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.3165214893716617,
+          "timestamp": "2025-05-21T18:13:45.7503319+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.6193717610989262,
+          "timestamp": "2025-05-21T18:13:45.7503387+02:00"
+        }
+      ],
+      "signature": "1212",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "80b1e45834f6490fd0e1ba6b0e83f4def1b1492e388ea1adf5096d91861dfac0",
+    "hash": "814fa5ed3f3e01c202430090e8d9e08f45b6157a1f176311579c97e320e77159"
+  },
+  {
+    "index": 7,
+    "timeStamp": "2025-05-21T16:31:29.4523139Z",
+    "data": {
+      "measurments": [
+        {
+          "deviceId": 0,
+          "value": 0.48196926769304527,
+          "timestamp": "2025-05-21T18:31:28.2145871+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.0028190973396365893,
+          "timestamp": "2025-05-21T18:31:28.2233326+02:00"
+        },
+        {
+          "deviceId": 0,
+          "value": 0.9088876289189007,
+          "timestamp": "2025-05-21T18:31:28.223336+02:00"
+        }
+      ],
+      "signature": "304402200e85c2d0c7a35c5ff501458489ba9a9081f300496576f28ac2f83f455f2ec5d30220587ba70d62d987bbd585d21dc8b24c0ea0f69f6948437811c2ab2cf4e013e728",
+      "name": "03811d30a6432d1971113e6bd8d5b47e4ffc174f3d400a0c7d2342b17d17993f95"
+    },
+    "previousHash": "814fa5ed3f3e01c202430090e8d9e08f45b6157a1f176311579c97e320e77159",
+    "hash": "4ad477e3b8983625d2091ab83b5eb17ec9dd7e82fd02d01d44213f5b3ca2232c"
+  }
+]

@@ -1,0 +1,140 @@
+﻿@model List<BlockchainServer.Domain.Entities.Block>
+
+@{
+    ViewData["Title"] = "Blockchain";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Blockchain</h1>
+    <p>Click on a block to view its data below.</p>
+    <form method="post" asp-action="CheckBlockchainValidity">
+        <button type="submit" class="btn btn-primary">Check blockchain for validity</button>
+    </form>
+    <br />
+    <form method="post" asp-action="VerifySignatures">
+        <button type="submit" class="btn btn-secondary">Verify Block Signatures</button>
+    </form>
+    <br />
+</div>
+
+
+<div class="container">
+    <div class="block-slider-container">
+        <button class="arrow-left" onclick="moveSlider('left')">&#8592;</button>
+        <div class="block-slider">
+            <div class="row flex-nowrap">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var block = Model[i];
+                    <div class="col-md-3 mb-4">
+                        <div class="block p-3" style="border: 2px solid #ddd; cursor: pointer; border-radius: 8px; background-color: lightgreen;"
+                             onclick='showMeasurements(@Html.Raw(Json.Serialize(block.Data.Measurments)))'>
+                            <h5><strong>Block @block.Index</strong></h5>
+                            <p><strong>Previous Hash:</strong><br />@block.PreviousHash</p>
+                            <p><strong>Current Hash:</strong><br />@block.Hash</p>
+                            <p><strong>Signature:</strong><br />@block.Data.Signature</p>
+                            <p><strong>Timestamp:</strong><br />@block.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <button class="arrow-right" onclick="moveSlider('right')">&#8594;</button>
+    </div>
+</div>
+
+<div id="data-display" class="container mt-5">
+    <h3 class="text-center">Block Measurements</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Device ID</th>
+                    <th>Value</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="measurement-body">
+                <!-- Filled dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showMeasurements(measurements) {
+            const tbody = document.getElementById("measurement-body");
+            tbody.innerHTML = "";
+
+            measurements.forEach(m => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                            <td>${m.deviceId}</td>
+                            <td>${m.value}</td>
+                            <td>${new Date(m.timestamp).toLocaleString()}</td>
+                        `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function moveSlider(direction) {
+            const slider = document.querySelector('.block-slider');
+            const step = 300;
+            slider.scrollLeft += direction === 'right' ? step : -step;
+        }
+    </script>
+
+    <style>
+        .block-slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .block-slider {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+            width: 90%;
+        }
+
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+            .arrow-left:hover, .arrow-right:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+        .block {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            word-wrap: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+        }
+    </style>
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "RFnf64kdMiOrv3x5RNQ+FuJMeRuvRIxktD4rxYItZns=",
+  "Source": "BlockchainServer.API",
+  "BasePath": "_content/BlockchainServer.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\bin\Debug\net8.0\BlockchainServer.Domain.deps.json
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\bin\Debug\net8.0\BlockchainServer.Domain.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\bin\Debug\net8.0\BlockchainServer.Domain.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.AssemblyInfoInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.AssemblyInfo.cs
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.csproj.CoreCompileInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\refint\BlockchainServer.Domain.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\ref\BlockchainServer.Domain.dll

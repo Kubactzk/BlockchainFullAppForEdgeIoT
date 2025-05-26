@@ -1,0 +1,12 @@
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\bin\Debug\net8.0\BlockchainEdgeApp.Security.deps.json
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\bin\Debug\net8.0\BlockchainEdgeApp.Security.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\bin\Debug\net8.0\BlockchainEdgeApp.Security.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.csproj.AssemblyReference.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.AssemblyInfoInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.AssemblyInfo.cs
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.csproj.CoreCompileInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\refint\BlockchainEdgeApp.Security.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\ref\BlockchainEdgeApp.Security.dll

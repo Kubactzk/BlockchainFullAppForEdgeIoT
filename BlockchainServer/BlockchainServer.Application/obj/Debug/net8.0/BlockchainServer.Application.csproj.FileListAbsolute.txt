@@ -1,0 +1,15 @@
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\bin\Debug\net8.0\BlockchainServer.Application.deps.json
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\bin\Debug\net8.0\BlockchainServer.Application.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\bin\Debug\net8.0\BlockchainServer.Application.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\bin\Debug\net8.0\BlockchainServer.Domain.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\bin\Debug\net8.0\BlockchainServer.Domain.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.csproj.AssemblyReference.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.AssemblyInfoInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.AssemblyInfo.cs
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.csproj.CoreCompileInputs.cache
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.csproj.CopyComplete
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\refint\BlockchainServer.Application.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\BlockchainServer.Application.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Application\obj\Debug\net8.0\ref\BlockchainServer.Application.dll
