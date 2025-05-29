@@ -20,7 +20,6 @@ namespace BlockchainEdgeApp
 
             EdgeDeviceData edgeDeviceData = new EdgeDeviceData()
             {
-                Signature = "1212",
                 Measurments = list,
             };
             

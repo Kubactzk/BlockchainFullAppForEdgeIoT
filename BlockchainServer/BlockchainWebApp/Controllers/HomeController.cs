@@ -36,11 +36,24 @@ namespace BlockchainWebApp.Controllers
         [HttpPost]
         public IActionResult CheckBlockchainValidity()
         {
+            (bool isValid, int? badBlockId) = _blockchainService.VerifyBlockchain();
+
+            if (!isValid && badBlockId.HasValue)
+            {
+                TempData["InvalidBlockHashIndex"] = badBlockId.Value;
+            }
+
             return RedirectToAction("Index");
         }
+
         [HttpPost]
         public IActionResult VerifySignatures()
         {
+            (bool isValid, int? badBlockId) = _blockchainService.VerifyBlockchainSignatures();
+            if (!isValid && badBlockId.HasValue)
+            {
+                TempData["InvalidBlockSignatureIndex"] = badBlockId.Value;
+            }
             return RedirectToAction("Index");
         }
     }

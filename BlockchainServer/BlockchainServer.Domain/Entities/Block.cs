@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using BlockchainServer.Domain.Entities.Shared;
 
 namespace BlockchainServer.Domain.Entities
 {
@@ -14,12 +15,12 @@ namespace BlockchainServer.Domain.Entities
     {
         public int Index { get; set; }
         public DateTime TimeStamp { get; set; } = DateTime.UtcNow;
-        public EdgeDeviceData Data { get; set; }
+        public EdgeDeviceDataShared Data { get; set; }
         public string PreviousHash { get; set; }
         public string Hash { get; set; }
 
         public Block() { }
-        public Block(int index, EdgeDeviceData data, string previousHash)
+        public Block(int index, EdgeDeviceDataShared data, string previousHash)
         {
             Index = index;
             TimeStamp = DateTime.UtcNow;

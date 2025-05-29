@@ -1,73 +1,100 @@
 [
   {
     "index": 0,
-    "timeStamp": "2025-05-21T16:35:36.5903066Z",
+    "timeStamp": "2025-05-29T10:52:37.1148935Z",
     "data": {
       "measurments": [
         {
-          "deviceId": 0,
+          "ioTDeviceName": "Genesis",
           "value": 0,
-          "timestamp": "2025-05-21T16:35:36.5899257Z"
+          "timestamp": "2025-05-29T10:52:37.1148915Z"
         }
       ],
       "signature": "0",
       "name": "Genesis Block"
     },
     "previousHash": "0",
-    "hash": "9964d80ea6fb5e49a45e08ece68234a18c21ca8e1177bacb33307e97f0f16ea4"
+    "hash": "e388fbed2944849d23943d4e7a9a0049ea9a9241bb99c3a8b9831112acaa5e7e"
   },
   {
     "index": 1,
-    "timeStamp": "2025-05-21T16:36:18.9140149Z",
+    "timeStamp": "2025-05-29T10:52:37.1523449Z",
     "data": {
       "measurments": [
         {
-          "deviceId": 0,
-          "value": 0.4276313970659078,
-          "timestamp": "2025-05-21T18:36:18.4788579+02:00"
+          "ioTDeviceName": "Temperature",
+          "value": 0.3639791028341831,
+          "timestamp": "2025-05-29T12:52:36.8530277+02:00"
         },
         {
-          "deviceId": 0,
-          "value": 0.1177963171902191,
-          "timestamp": "2025-05-21T18:36:18.492011+02:00"
+          "ioTDeviceName": "Temperature",
+          "value": 0.07413377961414525,
+          "timestamp": "2025-05-29T12:52:36.8620801+02:00"
         },
         {
-          "deviceId": 0,
-          "value": 0.7675392288128303,
-          "timestamp": "2025-05-21T18:36:18.4920187+02:00"
+          "ioTDeviceName": "Temperature",
+          "value": 0.3454742961626437,
+          "timestamp": "2025-05-29T12:52:36.8620847+02:00"
         }
       ],
-      "signature": "3044022036697eb14ba491fd8b679fb248ca96f3592de523390234b0266050f4266608d7022034621aac0b9867276922a7238a91fecfc828dc5689e03cc9549730bfdf559b65",
-      "name": "03811d30a6432d1971113e6bd8d5b47e4ffc174f3d400a0c7d2342b17d17993f95"
+      "signature": "304402203e8ac491623e17970eef5dbab26b95266dc69d8b47cfd7e5ff076ad3728e394f022062f7f5470f67aef76b3c262f3f0bedbafc9498fcbba9c5553d3e98d427da4455",
+      "name": "Edge_device_1"
     },
-    "previousHash": "9964d80ea6fb5e49a45e08ece68234a18c21ca8e1177bacb33307e97f0f16ea4",
-    "hash": "e585b101d7fd2abc4c22508cec063995f35d843e69f7a25b1a42a1b1c27b4fb8"
+    "previousHash": "e388fbed2944849d23943d4e7a9a0049ea9a9241bb99c3a8b9831112acaa5e7e",
+    "hash": "702948cef3a390da7826f0426dbabac83571443d0bf0e485f4344d87ec320840"
   },
   {
     "index": 2,
-    "timeStamp": "2025-05-26T13:51:33.6353381Z",
+    "timeStamp": "2025-05-29T10:52:41.9985813Z",
     "data": {
       "measurments": [
         {
-          "deviceId": 0,
-          "value": 0.02831596831845995,
-          "timestamp": "2025-05-26T15:51:31.2443577+02:00"
+          "ioTDeviceName": "Humidity",
+          "value": 0.870566072334752,
+          "timestamp": "2025-05-29T12:52:41.6680124+02:00"
         },
         {
-          "deviceId": 0,
-          "value": 0.4151659647685846,
-          "timestamp": "2025-05-26T15:51:31.2535197+02:00"
+          "ioTDeviceName": "Vibration",
+          "value": 0.14039083389533535,
+          "timestamp": "2025-05-29T12:52:41.6774769+02:00"
         },
         {
-          "deviceId": 0,
-          "value": 0.42770523982480646,
-          "timestamp": "2025-05-26T15:51:31.2535251+02:00"
+          "ioTDeviceName": "Humidity",
+          "value": 0.5165771310871674,
+          "timestamp": "2025-05-29T12:52:41.6774806+02:00"
         }
       ],
-      "signature": "3044022026a04995f383f32226dc00a8c8bc71b1f23ac7d57c74250ce0c756c0048ea75b02201762b3b6caecf47c2967ed0e2c055be1b0e01e14820fd21fa268aaeff3c3ad17",
+      "signature": "304402207d3e84561c7dc5b25ee16ada8e7e97c32ddb37623441c30514b796f704f258c3022054977b4309c1cf403f1822c47a18a0e48e22eaf6b02cd56c1884ddb4ef79d10b",
       "name": "Edge_device_1"
     },
-    "previousHash": "e585b101d7fd2abc4c22508cec063995f35d843e69f7a25b1a42a1b1c27b4fb8",
-    "hash": "36d0f4d1cc4b4c71c3b95a7f1ca7eae1421432957ea9415851b9f9bf9ea3cd4c"
+    "previousHash": "702948cef3a390da7826f0426dbabac83571443d0bf0e485f4344d87ec320840",
+    "hash": "4c45e1b32f85fc86e39de55434c40f7b16c565a5c2d23912c4744e507db2f200"
+  },
+  {
+    "index": 3,
+    "timeStamp": "2025-05-29T11:33:08.1305423Z",
+    "data": {
+      "measurments": [
+        {
+          "ioTDeviceName": "Temperature",
+          "value": 0.9181977446131926,
+          "timestamp": "2025-05-29T13:33:05.5335216+02:00"
+        },
+        {
+          "ioTDeviceName": "Humidity",
+          "value": 0.6806695851672185,
+          "timestamp": "2025-05-29T13:33:05.5439356+02:00"
+        },
+        {
+          "ioTDeviceName": "Vibration",
+          "value": 0.3181549187693221,
+          "timestamp": "2025-05-29T13:33:05.5439508+02:00"
+        }
+      ],
+      "signature": "304402201f017fc4c09c7e96f7aee8b69e150af1b29674ef0cbb2b99ba101faa61c69add0220181a4055ff9a4a693721eecbfd561c3c079b919bb7124b0367c7c10d24b622dd",
+      "name": "Edge_device_1"
+    },
+    "previousHash": "4c45e1b32f85fc86e39de55434c40f7b16c565a5c2d23912c4744e507db2f200",
+    "hash": "aafc5c19a5657e1e81daaf36ac20448a5480ed2ab3a27c8e8dd410f0e5f07f50"
   }
 ]

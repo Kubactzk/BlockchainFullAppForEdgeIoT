@@ -1,7 +1,10 @@
 ﻿@model List<BlockchainServer.Domain.Entities.Block>
+@using System.Text.Json
 
 @{
     ViewData["Title"] = "Blockchain";
+    int? invalidIndex = TempData["InvalidBlockHashIndex"] as int?;
+    int? invalidSignatureIndex = TempData["InvalidBlockSignatureIndex"] as int?;
 }
 
 <div class="text-center">
@@ -26,8 +29,12 @@
                 @for (int i = 0; i < Model.Count; i++)
                 {
                     var block = Model[i];
+                    var backgroundColor = ((invalidIndex.HasValue && block.Index >= invalidIndex.Value) || (invalidSignatureIndex.HasValue && block.Index >= invalidSignatureIndex.Value))
+                            ? "lightcoral"
+                    : "lightgreen";
+
                     <div class="col-md-3 mb-4">
-                        <div class="block p-3" style="border: 2px solid #ddd; cursor: pointer; border-radius: 8px; background-color: lightgreen;"
+                        <div class="block p-3" style="border: 2px solid #ddd; cursor: pointer; border-radius: 8px; background-color: @backgroundColor;"
                              onclick='showMeasurements(@Html.Raw(Json.Serialize(block.Data.Measurments)))'>
                             <h5><strong>Block @block.Index</strong></h5>
                             <p><strong>Previous Hash:</strong><br />@block.PreviousHash</p>
@@ -43,19 +50,44 @@
     </div>
 </div>
 
-<div id="data-display" class="container mt-5">
-    <h3 class="text-center">Block Measurements</h3>
+
+<div class="container mt-4">
+    <h3 class="text-center">Edge Devices</h3>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Device ID</th>
+                    <th>Edge Device Name</th>
+                    <th>Packets (Measurements)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var block in Model)
+                {
+                    <tr>
+                        <td>@block.Data.Name</td>
+                        <td>@block.Data.Measurments.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr />
+
+<div id="data-display" class="container mt-5">
+    <h3 class="text-center">Measurements</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>IoT Device Name</th>
                     <th>Value</th>
                     <th>Timestamp</th>
                 </tr>
             </thead>
             <tbody id="measurement-body">
-                <!-- Filled dynamically -->
             </tbody>
         </table>
     </div>
@@ -70,18 +102,12 @@
             measurements.forEach(m => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                            <td>${m.deviceId}</td>
+                            <td>${m.ioTDeviceName}</td>
                             <td>${m.value}</td>
                             <td>${new Date(m.timestamp).toLocaleString()}</td>
                         `;
                 tbody.appendChild(row);
             });
-        }
-
-        function moveSlider(direction) {
-            const slider = document.querySelector('.block-slider');
-            const step = 300;
-            slider.scrollLeft += direction === 'right' ? step : -step;
         }
     </script>
 

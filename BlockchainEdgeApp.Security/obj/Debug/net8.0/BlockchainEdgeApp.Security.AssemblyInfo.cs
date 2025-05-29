@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlockchainEdgeApp.Security")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4da7984850106fbfa74e97aa1434a8f96374c158")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlockchainEdgeApp.Security")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlockchainEdgeApp.Security")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

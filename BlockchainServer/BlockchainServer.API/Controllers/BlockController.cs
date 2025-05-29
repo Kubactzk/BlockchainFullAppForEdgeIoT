@@ -1,5 +1,6 @@
 ﻿using BlockchainServer.Application.Services.Interfaces;
 using BlockchainServer.Domain.Entities;
+using BlockchainServer.Domain.Entities.Shared;
 using BlockchainServer.Domain.Entities.DatabaseModels;
 using BlockchainServer.Infrastructure.DatabaseContext;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace BlockchainServer.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostData([FromBody] EdgeDeviceData data)
+        public IActionResult PostData([FromBody] EdgeDeviceDataShared data)
         {
             _blockchainService.AddBlock(data);
             List<Block> blocks = _blockchainService.GetBlockchain();

@@ -17,3 +17,4 @@ D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\Blockchai
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Infrastructure\obj\Debug\net8.0\ref\BlockchainServer.Infrastructure.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Infrastructure\bin\Debug\net8.0\BlockchainServer.Application.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Infrastructure\bin\Debug\net8.0\BlockchainServer.Application.pdb
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Infrastructure\obj\Debug\net8.0\BlockchainServer.Infrastructure.sourcelink.json

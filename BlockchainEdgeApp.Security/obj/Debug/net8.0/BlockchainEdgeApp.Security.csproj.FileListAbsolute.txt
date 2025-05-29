@@ -10,3 +10,4 @@ D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\refint\BlockchainEdgeApp.Security.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.pdb
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\ref\BlockchainEdgeApp.Security.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp.Security\obj\Debug\net8.0\BlockchainEdgeApp.Security.sourcelink.json

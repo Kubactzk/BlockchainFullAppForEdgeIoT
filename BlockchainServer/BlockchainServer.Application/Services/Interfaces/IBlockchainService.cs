@@ -1,4 +1,5 @@
-﻿using BlockchainServer.Domain.Entities;
+﻿using BlockchainServer.Domain.Entities.Shared;
+using BlockchainServer.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace BlockchainServer.Application.Services.Interfaces
     public interface IBlockchainService
     {
         Block GetLatestBlock();
-        void AddBlock(EdgeDeviceData data);
+        void AddBlock(EdgeDeviceDataShared data);
         List<Block> GetBlockchain();
+        (bool IsValid, int? InvalidBlockIndex) VerifyBlockchain();
+        (bool IsValid, int? InvalidBlockIndex) VerifyBlockchainSignatures();
     }
 }

@@ -14,10 +14,11 @@ namespace BlockchainEdgeApp.Services
         public Measurment GenerateData()
         {
             Random random = new Random();
+            int index = random.Next(sensorTypes.Length);
 
             var data = new Measurment()
             {
-                Name = deviceName,
+                IoTDeviceName = sensorTypes[index],
                 timestamp = DateTime.Now,
                 Value = random.NextDouble(),
             };

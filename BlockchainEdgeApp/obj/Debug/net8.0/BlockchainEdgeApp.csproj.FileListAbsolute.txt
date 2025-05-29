@@ -33,3 +33,4 @@ D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp\bin\Debu
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp\bin\Debug\net8.0\BlockchainEdgeApp.Security.pdb
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp\obj\Debug\net8.0\BlockchainEdgeApp.csproj.AssemblyReference.cache
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp\obj\Debug\net8.0\BlockchainEdgeApp.csproj.CopyComplete
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainEdgeApp\obj\Debug\net8.0\BlockchainEdgeApp.sourcelink.json

@@ -183,3 +183,5 @@ D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\Blockchai
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainWebApp\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainWebApp\bin\Debug\net8.0\NBitcoin.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainWebApp\obj\Debug\net8.0\BlockchainWebApp.sourcelink.json
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainWebApp\obj\Debug\net8.0\BlockchainWebApp.MvcApplicationPartsAssemblyInfo.cs

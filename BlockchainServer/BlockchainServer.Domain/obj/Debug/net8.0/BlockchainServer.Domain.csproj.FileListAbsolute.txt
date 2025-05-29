@@ -9,3 +9,4 @@ D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\Blockchai
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\refint\BlockchainServer.Domain.dll
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.pdb
 D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\ref\BlockchainServer.Domain.dll
+D:\Studia\ISA-magister\Magisterka\OfficialApplication\BlockchainServer\BlockchainServer.Domain\obj\Debug\net8.0\BlockchainServer.Domain.sourcelink.json

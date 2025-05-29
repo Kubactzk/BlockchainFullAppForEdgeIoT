@@ -68,11 +68,11 @@ namespace BlockchainServer.Infrastructure.Services
 
         private Block CreateGenesisBlock()
         {
-            var genesisData = new EdgeDeviceData
+            var genesisData = new EdgeDeviceDataShared
             {
-                Measurments = new List<Measurment>
+                Measurments = new List<MeasurmentShared>
                 {
-                    new Measurment { DeviceId = 0, timestamp = DateTime.UtcNow, Value = 0 }
+                    new MeasurmentShared { IoTDeviceName = "Genesis", timestamp = DateTime.UtcNow, Value = 0 }
                 },
                 Signature = "0",
                 Name = "Genesis Block"
@@ -83,7 +83,7 @@ namespace BlockchainServer.Infrastructure.Services
 
         public Block GetLatestBlock() => _chain.Last();
 
-        public void AddBlock(EdgeDeviceData data)
+        public void AddBlock(EdgeDeviceDataShared data)
         {
             var device = _appDbContext.Devices.FirstOrDefault(d => d.Name == data.Name && d.IsAuthority);
             if (device == null)
@@ -98,7 +98,7 @@ namespace BlockchainServer.Infrastructure.Services
                 Signature = data.Signature,
                 Measurments = data.Measurments.Select(m => new MeasurmentShared
                 {
-                    Name = data.Name, // Jeśli każdy pomiar pochodzi od tego samego urządzenia
+                    IoTDeviceName = m.IoTDeviceName,
                     Value = m.Value,
                     timestamp = m.timestamp
                 }).ToList()
@@ -106,7 +106,7 @@ namespace BlockchainServer.Infrastructure.Services
 
             if (!VerifySignature(sharedData))
             {
-                Console.WriteLine("❌ Signature invalid. Block rejected.");
+                Console.WriteLine("Signature invalid. Block rejected.");
                 return;
             }
 
@@ -122,11 +122,11 @@ namespace BlockchainServer.Infrastructure.Services
         {
             try
             {
-                // Serializacja z wymuszeniem camelCase, jak na Edge
                 var payload = JsonSerializer.Serialize(new
                 {
-                    measurments = data.Measurments.Select(m => new {
-                        name = m.Name,
+                    measurments = data.Measurments.Select(m => new
+                    {
+                        IoTDeviceName = m.IoTDeviceName,
                         value = m.Value,
                         timestamp = m.timestamp
                     }),
@@ -150,8 +150,8 @@ namespace BlockchainServer.Infrastructure.Services
                     return false;
                 }
 
-                Console.WriteLine("SERVER PAYLOAD: " + payload);
-                Console.WriteLine("SERVER HASH: " + Convert.ToHexString(hash));
+                /*Console.WriteLine("SERVER PAYLOAD: " + payload);
+                Console.WriteLine("SERVER HASH: " + Convert.ToHexString(hash));*/
 
                 var pubKey = new PubKey(publicKeyHex);
                 var signatureBytes = Encoders.Hex.DecodeData(data.Signature);
@@ -165,7 +165,6 @@ namespace BlockchainServer.Infrastructure.Services
                 return false;
             }
         }
-
         private void SaveBlockchain()
         {
             var options = new JsonSerializerOptions
@@ -182,6 +181,43 @@ namespace BlockchainServer.Infrastructure.Services
         public List<Block> GetBlockchain()
         {
             return _chain;
+        }
+
+        public (bool IsValid, int? InvalidBlockIndex) VerifyBlockchain()
+        {
+            int? blockIndex = null;
+            bool isValid = true;
+
+            foreach (var block in _chain)
+            {
+                if(block.Hash != block.ComputeHash())
+                {
+                    isValid = false;
+                    blockIndex = block.Index;
+                    break;
+                }
+            }
+            return (isValid, blockIndex);
+        }
+
+        public (bool IsValid, int? InvalidBlockIndex) VerifyBlockchainSignatures()
+        {
+            int? blockIndex = null;
+            bool isValid = true;
+
+            foreach (var block in _chain)
+            {
+                if (block.Index != 0)
+                {
+                    if (!VerifySignature(block.Data))
+                    {
+                        isValid = false;
+                        blockIndex = block.Index;
+                        break;
+                    }
+                }
+            }
+            return (isValid, blockIndex);
         }
     }
 }

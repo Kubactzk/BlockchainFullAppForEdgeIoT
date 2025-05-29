@@ -8,7 +8,7 @@ namespace BlockchainServer.Domain.Entities.Shared
 {
     public class MeasurmentShared
     {
-        public string Name { get; set; }
+        public string IoTDeviceName { get; set; }
         public double Value { get; set; }
         public DateTime timestamp { get; set; }
     }
