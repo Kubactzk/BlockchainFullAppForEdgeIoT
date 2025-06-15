@@ -20,36 +20,30 @@
     <br />
 </div>
 
-
 <div class="container">
     <div class="block-slider-container">
         <button class="arrow-left" onclick="moveSlider('left')">&#8592;</button>
         <div class="block-slider">
-            <div class="row flex-nowrap">
-                @for (int i = 0; i < Model.Count; i++)
-                {
-                    var block = Model[i];
-                    var backgroundColor = ((invalidIndex.HasValue && block.Index >= invalidIndex.Value) || (invalidSignatureIndex.HasValue && block.Index >= invalidSignatureIndex.Value))
-                            ? "lightcoral"
-                    : "lightgreen";
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                var block = Model[i];
+                var backgroundColor = ((invalidIndex.HasValue && block.Index >= invalidIndex.Value) || (invalidSignatureIndex.HasValue && block.Index >= invalidSignatureIndex.Value))
+                ? "lightcoral"
+                : "lightgreen";
 
-                    <div class="col-md-3 mb-4">
-                        <div class="block p-3" style="border: 2px solid #ddd; cursor: pointer; border-radius: 8px; background-color: @backgroundColor;"
-                             onclick='showMeasurements(@Html.Raw(Json.Serialize(block.Data.Measurments)))'>
-                            <h5><strong>Block @block.Index</strong></h5>
-                            <p><strong>Previous Hash:</strong><br />@block.PreviousHash</p>
-                            <p><strong>Current Hash:</strong><br />@block.Hash</p>
-                            <p><strong>Signature:</strong><br />@block.Data.Signature</p>
-                            <p><strong>Timestamp:</strong><br />@block.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss")</p>
-                        </div>
-                    </div>
-                }
-            </div>
+                <div class="block-item" style="background-color: @backgroundColor;"
+                     onclick='showMeasurements(@Html.Raw(Json.Serialize(block.Data.Measurments)))'>
+                    <h5><strong>Block @block.Index</strong></h5>
+                    <p><strong>Previous Hash:</strong><br />@block.PreviousHash</p>
+                    <p><strong>Current Hash:</strong><br />@block.Hash</p>
+                    <p><strong>Signature:</strong><br />@block.Data.Signature</p>
+                    <p><strong>Timestamp:</strong><br />@block.TimeStamp.ToString("dd.MM.yyyy HH:mm:ss")</p>
+                </div>
+            }
         </div>
         <button class="arrow-right" onclick="moveSlider('right')">&#8594;</button>
     </div>
 </div>
-
 
 <div class="container mt-4">
     <h3 class="text-center">Edge Devices</h3>
@@ -93,19 +87,71 @@
     </div>
 </div>
 
+<div class="container mt-4">
+    <h3 class="text-center">Sensor Statisics</h3>
+    @if (ViewBag.GroupedStats != null)
+    {
+        var stats = (Dictionary<string, Dictionary<string, int>>)ViewBag.GroupedStats;
+        foreach (var device in stats)
+        {
+            <h5 class="mt-4">@device.Key</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sensor (IoT Device Name)</th>
+                            <th>Measurement Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sensor in device.Value)
+                        {
+                            <tr>
+                                <td>@sensor.Key</td>
+                                <td>@sensor.Value</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>
+
 @section Scripts {
     <script>
+        function moveSlider(direction) {
+            const slider = document.querySelector(".block-slider");
+            const scrollAmount = 360 + 16; // szerokość bloku + gap
+
+            if (direction === "left") {
+                slider.scrollLeft -= scrollAmount;
+            } else if (direction === "right") {
+                slider.scrollLeft += scrollAmount;
+            }
+        }
+
         function showMeasurements(measurements) {
             const tbody = document.getElementById("measurement-body");
             tbody.innerHTML = "";
 
             measurements.forEach(m => {
                 const row = document.createElement("tr");
+
+                const isTemperatureSensor = m.ioTDeviceName.toLowerCase() === "temperature";
+                const value = parseFloat(m.value);
+                const isOutOfRange = isTemperatureSensor && (value < 15 || value > 30);
+
                 row.innerHTML = `
                             <td>${m.ioTDeviceName}</td>
                             <td>${m.value}</td>
                             <td>${new Date(m.timestamp).toLocaleString()}</td>
                         `;
+
+                if (isOutOfRange) {
+                    row.style.backgroundColor = "#f8d7da";
+                }
+
                 tbody.appendChild(row);
             });
         }
@@ -117,14 +163,29 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            width: 100%;
+            overflow: hidden;
         }
 
         .block-slider {
             display: flex;
+            gap: 16px;
             overflow-x: auto;
-            padding: 10px 0;
             scroll-behavior: smooth;
+            padding: 10px 0;
             width: 90%;
+        }
+
+        .block-item {
+            flex: 0 0 340px;
+            max-width: 340px;
+            background-color: lightgreen;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            word-wrap: break-word;
         }
 
         .arrow-left, .arrow-right {
@@ -138,6 +199,7 @@
             color: #333;
             cursor: pointer;
             border-radius: 50%;
+            z-index: 1;
         }
 
         .arrow-left {
@@ -151,13 +213,6 @@
             .arrow-left:hover, .arrow-right:hover {
                 background-color: rgba(0, 0, 0, 0.3);
             }
-
-        .block {
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-            word-wrap: break-word;
-            white-space: normal;
-            overflow-wrap: break-word;
-        }
 
         .table td, .table th {
             vertical-align: middle;

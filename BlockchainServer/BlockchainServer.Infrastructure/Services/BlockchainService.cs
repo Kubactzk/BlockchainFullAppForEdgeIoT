@@ -24,7 +24,7 @@ namespace BlockchainServer.Infrastructure.Services
         {
             _appDbContext = dbContext;
 
-            _filePath = "D:\\Studia\\ISA-magister\\Magisterka\\OfficialApplication\\BlockchainServer\\BlockchainServer.Domain\\Blockchain\\blockchain.json";
+            _filePath = "blockchain.json";
             _chain = new List<Block>();
 
             InitializeBlockchain();
@@ -83,13 +83,13 @@ namespace BlockchainServer.Infrastructure.Services
 
         public Block GetLatestBlock() => _chain.Last();
 
-        public void AddBlock(EdgeDeviceDataShared data)
+        public bool AddBlock(EdgeDeviceDataShared data)
         {
             var device = _appDbContext.Devices.FirstOrDefault(d => d.Name == data.Name && d.IsAuthority);
             if (device == null)
             {
                 Console.WriteLine("Device is not authorized (PoA failed). Block rejected.");
-                return;
+                return false;
             }
 
             var sharedData = new EdgeDeviceDataShared
@@ -107,7 +107,7 @@ namespace BlockchainServer.Infrastructure.Services
             if (!VerifySignature(sharedData))
             {
                 Console.WriteLine("Signature invalid. Block rejected.");
-                return;
+                return false;
             }
 
             var latestBlock = GetLatestBlock();
@@ -116,6 +116,32 @@ namespace BlockchainServer.Infrastructure.Services
 
             SaveBlockchain();
             Console.WriteLine("Block accepted and saved.");
+            return true;
+        }
+
+        public Dictionary<string, Dictionary<string, int>> GetSensorUsageStatisticsGroupedByDevice()
+        {
+            var stats = new Dictionary<string, Dictionary<string, int>>();
+
+            foreach (var block in _chain)
+            {
+                var deviceName = block.Data?.Name ?? "UnknownDevice";
+
+                if (!stats.ContainsKey(deviceName))
+                    stats[deviceName] = new Dictionary<string, int>();
+
+                foreach (var m in block.Data?.Measurments ?? new List<MeasurmentShared>())
+                {
+                    var sensorName = m.IoTDeviceName ?? "UnknownSensor";
+
+                    if (!stats[deviceName].ContainsKey(sensorName))
+                        stats[deviceName][sensorName] = 1;
+                    else
+                        stats[deviceName][sensorName]++;
+                }
+            }
+
+            return stats;
         }
 
         private bool VerifySignature(EdgeDeviceDataShared data)
@@ -149,9 +175,6 @@ namespace BlockchainServer.Infrastructure.Services
                     Console.WriteLine("Public key not found in database.");
                     return false;
                 }
-
-                /*Console.WriteLine("SERVER PAYLOAD: " + payload);
-                Console.WriteLine("SERVER HASH: " + Convert.ToHexString(hash));*/
 
                 var pubKey = new PubKey(publicKeyHex);
                 var signatureBytes = Encoders.Hex.DecodeData(data.Signature);

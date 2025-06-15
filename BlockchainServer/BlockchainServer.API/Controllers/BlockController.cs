@@ -22,10 +22,30 @@ namespace BlockchainServer.API.Controllers
         [HttpPost]
         public IActionResult PostData([FromBody] EdgeDeviceDataShared data)
         {
-            _blockchainService.AddBlock(data);
-            List<Block> blocks = _blockchainService.GetBlockchain();
-            Console.WriteLine(blocks.Count);
+            var stopwatch = new System.Diagnostics.Stopwatch();
+            stopwatch.Start();
+
+            bool isAdded = _blockchainService.AddBlock(data);
+
+            stopwatch.Stop();
+            long elapsedMs = stopwatch.ElapsedMilliseconds;
+
+            int count = data.Measurments?.Count ?? 0;
+
+            string fileName = $"D:/Studia/ISA-magister/Magisterka/OfficialApplication/logs/{count}.txt";
+            string logsDirectory = Path.GetDirectoryName(fileName);
+            Directory.CreateDirectory(logsDirectory);
+
+            System.IO.File.AppendAllText(fileName, $"{elapsedMs}\n");
+
+            if (!isAdded)
+            {
+                return BadRequest("Block has not been added, wrong parameters.");
+            }
+
             return Ok("Data received and block added successfully.");
         }
+
+
     }
 }

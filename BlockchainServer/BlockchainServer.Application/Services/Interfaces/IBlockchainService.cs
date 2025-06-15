@@ -13,9 +13,12 @@ namespace BlockchainServer.Application.Services.Interfaces
     public interface IBlockchainService
     {
         Block GetLatestBlock();
-        void AddBlock(EdgeDeviceDataShared data);
+        bool AddBlock(EdgeDeviceDataShared data);
         List<Block> GetBlockchain();
         (bool IsValid, int? InvalidBlockIndex) VerifyBlockchain();
         (bool IsValid, int? InvalidBlockIndex) VerifyBlockchainSignatures();
+
+        Dictionary<string, Dictionary<string, int>> GetSensorUsageStatisticsGroupedByDevice();
+
     }
 }

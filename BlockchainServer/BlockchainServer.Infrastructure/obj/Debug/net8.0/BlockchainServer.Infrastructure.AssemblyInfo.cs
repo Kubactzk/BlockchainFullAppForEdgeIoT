@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlockchainServer.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4da7984850106fbfa74e97aa1434a8f96374c158")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f72c8b0c665d7657d4667427d4b89c52fa70c123")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlockchainServer.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlockchainServer.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

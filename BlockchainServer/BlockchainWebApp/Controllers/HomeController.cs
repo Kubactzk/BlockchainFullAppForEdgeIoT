@@ -19,6 +19,8 @@ namespace BlockchainWebApp.Controllers
         public IActionResult Index()
         {
             var chain = _blockchainService.GetBlockchain();
+            var groupedStats = _blockchainService.GetSensorUsageStatisticsGroupedByDevice();
+            ViewBag.GroupedStats = groupedStats;
             return View(chain);
         }
 

@@ -55,8 +55,8 @@ namespace BlockchainEdgeApp.Services
             var signature = privateKey.Sign(new uint256(hash)).ToDER();
 
             data.Signature = Encoders.Hex.EncodeData(signature);
-            Console.WriteLine("EDGE PAYLOAD: " + payload);
-            Console.WriteLine("EDGE HASH: " + Convert.ToHexString(hash));
+            /*Console.WriteLine("EDGE PAYLOAD: " + payload);
+            Console.WriteLine("EDGE HASH: " + Convert.ToHexString(hash));*/
 
         }
 
